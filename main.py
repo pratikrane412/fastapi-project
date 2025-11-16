@@ -22,10 +22,13 @@ products = [
 def init_db():
     db = session()
     
-    for product in products:
-        db.add(database_models.Product(**product.model_dump()))
+    count = db.query(database_models.Product).count
+    
+    if count == 0:
+        for product in products:
+            db.add(database_models.Product(**product.model_dump()))
         
-    db.commit()
+        db.commit()
 init_db()
 
 @app.get("/products")
