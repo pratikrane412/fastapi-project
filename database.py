@@ -1,5 +1,4 @@
 from sqlalchemy import create_engine
-from sqlalchemy import Engine
 from sqlalchemy.orm import sessionmaker
 
 db_url = "postgresql://postgres:admin@localhost:5432/pratik"
