@@ -39,7 +39,7 @@ def get_db():
 def init_db():
     db = session()
     
-    count = db.query(database_models.Product).count
+    count = db.query(database_models.Product).count()
     
     if count == 0:
         for product in products:
